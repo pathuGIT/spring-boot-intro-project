@@ -3,7 +3,7 @@
 
 ## How new product saving happen?
 ## ✅ Summary Diagram (With Code Flow)
-Check the [Product Flow](./docs/product-flow.md) for how adding products works.
+Check the [Product Flow](./docs/new-product-save.md) for how adding products works.
 
 
 ```plaintext
