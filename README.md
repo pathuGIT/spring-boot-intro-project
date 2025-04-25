@@ -3,6 +3,8 @@
 
 ## How new product saving happen?
 ## ✅ Summary Diagram (With Code Flow)
+Check the [Product Flow](./docs/product-flow.md) for how adding products works.
+
 
 ```plaintext
 [index.html] -> Click "Add New Product"
