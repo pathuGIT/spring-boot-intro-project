@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>My Products</title>
+
+<!--    <link rel="stylesheet"-->
+<!--          href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"-->
+<!--          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"-->
+<!--          crossorigin="anonymous">-->
+
+</head>
+<body>
+    <div align="center">
+        <h1>Product List</h1>
+        <br>
+        <table border="1" cellpadding="10">
+            <thead>
+                <tr>
+                    <th>Product Id</th>
+                    <th>Product Name</th>
+                    <th>Product Brand</th>
+                    <th>Product Modern</th>
+                    <th>Product Price</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="product : ${listProducts}">
+                    <td th:text="${product.id}">Product Id</td>
+                    <td th:text="${product.name}">Product Name</td>
+                    <td th:text="${product.brand}">Product Brand</td>
+                    <td th:text="${product.modern}">Product Modern</td>
+                    <td th:text="${product.price}">Product Price</td>
+                    <td>
+                        <a th:href="@{'/delete/' + ${product.id}}" onclick="return confirm('Are you sure?')">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

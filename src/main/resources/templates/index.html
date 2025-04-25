@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Product List</title>
+</head>
+<body>
+<div align="center">
+    <h1>Product List</h1>
+    <a href="/new">Add New Product</a>
+    <br><br>
+    <table border="1" cellpadding="10">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Brand</th>
+            <th>Modern</th>
+            <th>Price</th>
+            <th>Action</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="product : ${listProducts}">
+            <td th:text="${product.id}">1</td>
+            <td th:text="${product.name}">Name</td>
+            <td th:text="${product.brand}">Brand</td>
+            <td th:text="${product.modern}">Modern</td>
+            <td th:text="${product.price}">0.0</td>
+            <td>
+                <a th:href="@{'/edit' + ${product.id}}">Edit</a> |
+                <a th:href="@{'/delete/' + ${product.id}}"
+                   onclick="return confirm('Are you sure?')">Delete</a>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
